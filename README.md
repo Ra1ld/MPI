@@ -25,7 +25,7 @@ rather than treating MPI as a simple library layered on top of sequential C code
 
 
 
-# Prerequisites
+## Prerequisites
 
 The programs require an MPI implementation to be installed on our operating system
 (e.g., OpenMPI or MPICH).
@@ -35,7 +35,43 @@ are most commonly deployed, tested, and used in Unix-like systems.
 While MPI implementations are available on other platforms,
 a Linux environment ensures the most predictable and consistent behavior.
 
-For installation instructions, please refer to the end of this README.
+
+
+## Installation Instructions
+
+The following instructions assume a Unix-based operating system.
+Since each Unix-based system may differ, installation commands can vary across distributions.
+However, the general installation process remains the same.
+
+1. Update the system package index  
+2. Install the GCC compiler (skip this step if already installed)  
+3. Install an MPI implementation  
+4. Verify the installation  
+
+> **Note:**  
+> MPI implementations are actively maintained and widely used on modern Linux systems.
+> However, compatibility issues may arise depending on the specific combination of
+> operating system version and MPI distribution.
+> 
+> If any issues arise, please refer to the accompanying notes document for
+> environment-specific observations and troubleshooting details.
+
+### Example: Ubuntu-based systems
+
+```bash
+# 1. Update the system package index
+sudo apt update
+
+# 2. Install the GCC compiler and build tools (skip if already installed)
+sudo apt install gcc g++ build-essential
+
+# 3. Install an MPI implementation (OpenMPI)
+sudo apt install openmpi-bin openmpi-common libopenmpi-dev
+
+# 4. Verify the installation
+mpicc --version
+```
+
 
 
 ## Compilation
@@ -44,5 +80,29 @@ To compile a C program using MPI, execute the following command:
 
 ```bash
 mpicc <program_path> -o <output_executable>
+```
+
+## Execution
+
+To execute an MPI-compiled C program, two commonly used commands are available:
+
+1. mpirun
+2. mpiexec
+
+In modern MPI implementations, these commands often provide equivalent functionality.
+However, mpiexec is the standardized MPI launcher and is considered the more portable option across different systems and MPI distributions.
+
+In most local Linux environments, both commands can be used interchangeably as they are typically backed by the same MPI runtime launcher ( prterun ).
+
+```bash
+mpirun -np <number_of_processes> ./program
+```
+
+OR
+
+```bash
+mpiexec -np <number_of_processes> ./program
+```
+
 
 

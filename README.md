@@ -24,4 +24,25 @@ The overall design follows the mindset of a parallel execution engineer,
 rather than treating MPI as a simple library layered on top of sequential C code.
 
 
-# Key Concepts
+
+# Prerequisites
+
+The programs require an MPI implementation to be installed on our operating system
+(e.g., OpenMPI or MPICH).
+
+A Linux-based operating system is strongly recommended, as MPI environments
+are most commonly deployed, tested, and used in Unix-like systems.
+While MPI implementations are available on other platforms,
+a Linux environment ensures the most predictable and consistent behavior.
+
+For installation instructions, please refer to the end of this README.
+
+
+## Compilation
+
+To compile a C program using MPI, execute the following command:
+
+```bash
+mpicc <program_path> -o <output_executable>
+
+

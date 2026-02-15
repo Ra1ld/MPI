@@ -1,4 +1,7 @@
-# Overview
+# Example MPI Programs
+
+
+## Overview
 
 This repository contains a set of parallel programs developed in C using the MPI library.
 The first program demonstrates the use of blocking point-to-point communication (MPI_Send / MPI_Recv),
@@ -35,9 +38,9 @@ are most commonly deployed, tested, and used in Unix-like systems.
 While MPI implementations are available on other platforms,
 a Linux environment ensures the most predictable and consistent behavior.
 
+> It is assumed that the user is comfortable working in a terminal-based environment and has basic familiarity with command-line tools.
 
-
-## Installation Instructions
+## MPI Installation Instructions
 
 The following instructions assume a Unix-based operating system.
 Since each Unix-based system may differ, installation commands can vary across distributions.
@@ -73,7 +76,6 @@ mpicc --version
 ```
 
 
-
 ## Compilation
 
 To compile a C program using MPI, execute the following command:
@@ -103,6 +105,26 @@ OR
 ```bash
 mpiexec -np <number_of_processes> ./program
 ```
+> The ./ prefix assumes that the executable is located in the current working directory.
 
+If the executable resides in a different location, the full path must be provided:
 
+```bash
+mpiexec -np <number_of_processes> <program_path>
+```
+
+## How to use those programs? 
+
+The programs can be compiled and executed locally by following the steps described above.
+They are intended for experimentation and inspection, allowing the user to observe and analyze their behavior under different execution scenarios.
+
+Contributions, improvements, and discussions are welcome.
+If you have suggestions or would like to extend the programs in any way, feel free to contribute.
+
+## Additional Resources 
+
+For troubleshooting notes and deeper explanations of MPI concepts, please refer to the accompanying documentation:
+
+* NOTES.md — Environment-specific notes and troubleshooting
+* MPI_TUTORIAL.md — Step-by-step explanation of MPI fundamentals and core technical concepts
 

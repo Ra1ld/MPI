@@ -154,6 +154,13 @@ X_i \cap X_j = \emptyset \;\; \forall i \neq j
 $$
 
 
+The computational objective is to evaluate a set of aggregation functions over the global input domain, including:
+
+
+
+
+
+
 
 Mathematically, the overall computation can be expressed as:
 

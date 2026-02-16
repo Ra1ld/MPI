@@ -157,6 +157,7 @@ $$
 The computational objective is to evaluate a set of aggregation functions over the global input domain, including:
 
 *additive reductions:
+
 $$
 S = \sum_{i=1}^{N} x_i
 $$

@@ -70,18 +70,19 @@ sudo apt install gcc g++ build-essential
 
 # 3. Install an MPI implementation (OpenMPI)
 sudo apt install openmpi-bin openmpi-common libopenmpi-dev
+```
 
+```bash
 # 4. Verify if the C compiler wrapper is installed
 mpicc --version
+```
+<img width="833" height="285" alt="image" src="https://github.com/user-attachments/assets/838bd759-0083-4ab6-80e0-0bc5d9aee914" />
 
+```bash
 #5. Verify if the MPI runner is installed
 mpiexec --version
 ```
-
-<img width="833" height="285" alt="image" src="https://github.com/user-attachments/assets/838bd759-0083-4ab6-80e0-0bc5d9aee914" />
-
 <img width="927" height="649" alt="image" src="https://github.com/user-attachments/assets/a8c5f337-e60c-4aaa-acf9-851ff82e04f2" />
-
 
 ## Compilation
 

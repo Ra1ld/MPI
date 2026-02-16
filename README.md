@@ -148,9 +148,10 @@ For troubleshooting notes and deeper explanations of MPI concepts, please refer 
 ### Menu 
 <img width="292" height="236" alt="image" src="https://github.com/user-attachments/assets/fb9ff082-d145-4172-ae18-ca253fc5a5fa" />
 
-
+### Blocking oper.C
 <img width="312" height="462" alt="image" src="https://github.com/user-attachments/assets/79e49294-7c29-41d0-a04e-c1a5e5f16773" />
 
+### Collective oper.C
 <img width="413" height="756" alt="image" src="https://github.com/user-attachments/assets/61f9fd84-0099-40d1-abee-3d97ddef6dda" />
 
 

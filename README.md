@@ -138,9 +138,20 @@ $$
 X = \{x_1, x_2, \dots, x_N\}, \quad x_i \in \mathbb{N}
 $$
 
+distributed across a set of 𝑃 independent processes:
 
 
+$$
+\mathcal{P} = \{p_0, p_1, \dots, p_{P-1}\}
+$$
 
+Each process \(p_k\) is assigned a disjoint subset \(X_k \subset X\), such that:
+
+$$
+\bigcup_{k=0}^{P-1} X_k = X
+\quad \text{and} \quad
+X_i \cap X_j = \emptyset \;\; \forall i \neq j
+$$
 
 
 

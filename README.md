@@ -127,7 +127,21 @@ If the executable resides in a different location, the full path must be provide
 mpiexec -np <number_of_processes> <program_path>
 ```
 
-## How to use those programs? 
+## Problem Scope & Computational Model
+
+The programs in this repository focus on modeling and solving computational problems
+that naturally benefit from parallel execution.
+
+Mathematically, the overall computation can be expressed as:
+
+\[
+R = \sum_{i=0}^{P-1} f(D_i)
+\]
+
+where \( D_i \) represents the subset of data assigned to process \( i \),
+\( f \) denotes the local computation performed independently by each process,
+and \( P \) is the total number of MPI processes.
+
 
 The programs can be compiled and executed locally by following the steps described above.
 They are intended for experimentation and inspection, allowing the user to observe and analyze their behavior under different execution scenarios.

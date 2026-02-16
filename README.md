@@ -135,8 +135,9 @@ Formally, we consider a finite sequence of natural numbers:
 
 
 $$
-\int_{a}^{b} x^2 \,dx
+X = \{x_1, x_2, \dots, x_N\}, \quad x_i \in \mathbb{N}
 $$
+
 
 
 

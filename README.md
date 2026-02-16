@@ -80,7 +80,8 @@ mpiexec --version
 
 <img width="833" height="285" alt="image" src="https://github.com/user-attachments/assets/838bd759-0083-4ab6-80e0-0bc5d9aee914" />
 
-<img width="1919" height="633" alt="image" src="https://github.com/user-attachments/assets/335adb39-269d-47a2-9c22-e11d97b9520e" />
+<img width="927" height="649" alt="image" src="https://github.com/user-attachments/assets/a8c5f337-e60c-4aaa-acf9-851ff82e04f2" />
+
 
 ## Compilation
 

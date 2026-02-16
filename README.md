@@ -156,10 +156,16 @@ $$
 
 The computational objective is to evaluate a set of aggregation functions over the global input domain, including:
 
-* additive reductions:
+* additive reductions(for blocking point-to-point):
 
 $$
 S = \sum_{i=1}^{N} x_i
+$$
+
+* multiplicative transformations (collective communication):
+
+$$
+F = \prod_{i=1}^{N} f(x_i)
 $$
 
 

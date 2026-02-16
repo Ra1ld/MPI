@@ -66,10 +66,11 @@ However, the general installation process remains the same.
 sudo apt update
 
 # 2. Install the GCC compiler and build tools (skip if already installed)
-sudo apt install gcc g++ build-essential
+sudo apt install -y build-essential
+
 
 # 3. Install an MPI implementation (OpenMPI)
-sudo apt install openmpi-bin openmpi-common libopenmpi-dev
+sudo apt install -y openmpi-bin openmpi-common libopenmpi-dev
 ```
 
 ```bash

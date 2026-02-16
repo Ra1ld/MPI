@@ -85,6 +85,11 @@ mpiexec --version
 ```
 <img width="927" height="649" alt="image" src="https://github.com/user-attachments/assets/a8c5f337-e60c-4aaa-acf9-851ff82e04f2" />
 
+If the commands above produce output similar to the examples shown, the MPI environment has been successfully installed.
+
+It is strongly recommended to validate the installation by compiling and executing a simple MPI program.
+The following sections describe the standard compilation and execution workflow.
+
 ## Compilation
 
 To compile a C program using MPI, execute the following command:

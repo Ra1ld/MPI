@@ -129,8 +129,19 @@ mpiexec -np <number_of_processes> <program_path>
 
 ## Problem Scope & Computational Model
 
-The programs in this repository focus on modeling and solving computational problems
-that naturally benefit from parallel execution.
+The scope of this project is the study and implementation of deterministic parallel computations over large discrete input domains, using message-passing paradigms and explicit process coordination
+
+Formally, we consider a finite sequence of natural numbers:
+
+
+$$
+\int_{a}^{b} x^2 \,dx
+$$
+
+
+
+
+
 
 Mathematically, the overall computation can be expressed as:
 

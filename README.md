@@ -187,17 +187,15 @@ Two complementary communication strategies are explored:
 * Collective communication primitives
 
 
-In both cases, the global computation can be abstracted as a **parallel reduction tree**:
 
-Rendered form (conceptual):
+In both cases, the global computation can be abstracted as a parallel reduction tree:
 
 $$
 R = \mathcal{R}(r_0, r_1, \dots, r_{P-1})
 $$
 
-where each rₖ is a locally computed result derived solely from Xₖ, and ℛ
-is a deterministic reduction operator.
-
+where each \(r_k\) is a locally computed result derived solely from \(X_k\),
+and \(\mathcal{R}\) is a deterministic reduction operator.
 
 
 

@@ -45,12 +45,11 @@ mpiexec --version
 
 
 
-<br><br>
+<br>
 
-<p align="center">
 <strong>✔ Installation verified.</strong><br>
 If the commands above produce output similar to the examples shown, the MPI environment has been successfully installed.
-</p>
+
 
 ---
 

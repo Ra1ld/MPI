@@ -147,6 +147,8 @@ $$
 \mathcal{P} = \{p_0, p_1, \dots, p_{P-1}\}
 $$
 
+> The number of processes P is specified at execution time via `mpiexec`
+
 Each process \(p_k\) is assigned a disjoint subset \(X_k \subset X\), such that:
 
 $$

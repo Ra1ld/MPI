@@ -131,9 +131,8 @@ and \(\mathcal{R}\) is a deterministic reduction operator.
 ---
 ## Additional Resources 
 
-For troubleshooting notes and deeper explanations of MPI concepts, please refer to the accompanying documentation:
+Please refer to the accompanying documentation:
 
-* ``NOTES.md`` — Environment-specific notes and troubleshooting
 * ``MPI_TUTORIAL.md`` — Step-by-step explanation of MPI fundamentals and core technical concepts
 * ``MPI_Installation.md`` — Instructions for MPI Installation
 * ``How_to_run.md`` — Compilation & Execution Instructions 

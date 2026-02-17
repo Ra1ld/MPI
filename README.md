@@ -25,7 +25,7 @@ ownership of its memory, avoiding unnecessary resource allocation across process
 This approach enables efficient execution while establishing a solid foundation
 for scalability, reducing future maintenance overhead for developers and
 preserving runtime efficiency for **all users** as the codebase grows.
-
+<br><br>
 All MPI operations are validated through explicit checking of MPI return codes
 (e.g., `MPI_SUCCESS`), ensuring correct behavior under all execution conditions.
 
@@ -53,6 +53,8 @@ While MPI implementations are available on other platforms,
 a Linux environment ensures the most predictable and consistent behavior.
 
 > It is assumed that the user is comfortable working in a terminal-based environment and has basic familiarity with command-line tools.
+
+For installation instructions, please refer to ``MPI_Installation.md``
 
 ## MPI Installation Instructions
 

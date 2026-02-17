@@ -1,3 +1,4 @@
+
 # Example MPI Programs
 
 
@@ -127,7 +128,7 @@ If the executable resides in a different location, the full path must be provide
 mpiexec -np <number_of_processes> <program_path>
 ```
 
-## Problem Scope & Computational Model
+## Problem Scope 
 
 The scope of this project is the study and implementation of deterministic parallel computations over large discrete input domains, using message-passing paradigms and explicit process coordination
 
@@ -171,6 +172,30 @@ $$
 $$
 F = \prod_{i=1}^{N} f(x_i)
 $$
+
+
+Rather than relying on shared-memory abstractions, the system adopts a pure message-passing model, where all global results are constructed exclusively through explicit inter-process communication.
+
+## Computational Model
+
+The programs follow a Single Program, Multiple Data (SPMD) execution model, implemented using MPI. Each process executes the same binary but operates on a different partition of the input space.
+
+Two complementary communication strategies are explored:
+
+* Blocking point-to-point communication
+* Collective communication primitives
+
+
+In both cases, the global computation can be abstracted as a **parallel reduction tree**:
+
+Rendered form (conceptual):
+
+R = ℛ(r₀, r₁, …, rₚ₋₁)
+
+where each rₖ is a locally computed result derived solely from Xₖ, and ℛ
+is a deterministic reduction operator.
+
+
 
 
 

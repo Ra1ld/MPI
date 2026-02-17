@@ -3,39 +3,41 @@
 # Example MPI Programs
 
 
-## Overview
 
+## Overview
 
 This repository contains a set of parallel programs developed in C using the MPI library,
 demonstrating two communication paradigms:
 
-1. Blocking point-to-point communication (MPI_Send / MPI_Recv)
-2. Collective communication primitives
+- **Blocking point-to-point communication** (`MPI_Send` / `MPI_Recv`)
+- **Collective communication primitives**
 
 The primary goal was to ensure deterministic behavior, despite the inherently
 non-deterministic nature of parallel process scheduling and communication,
 while maintaining efficient execution.
 
+The programs are structured so that each process maintains clear and isolated
+ownership of its memory, avoiding unnecessary resource allocation across processes.
 
-The programs are structured so that each process maintains clear and isolated ownership of its memory,
-avoiding unnecessary resource allocation across processes.
-``Globally shared memory is used only when explicitly justified by the overall program design``.
+> Globally shared memory is used only when explicitly justified by the overall
+> program design.
 
-This approach enables efficient execution while establishing a solid foundation for scalability,
-reducing future maintenance overhead for developers and preserving runtime efficiency for ALL users as the codebase grows.
+This approach enables efficient execution while establishing a solid foundation
+for scalability, reducing future maintenance overhead for developers and
+preserving runtime efficiency for **all users** as the codebase grows.
 
-
-All MPI operations are validated through explicit checking of MPI return codes (e.g., MPI_SUCCESS),
-ensuring correct behavior under all execution conditions.
+All MPI operations are validated through explicit checking of MPI return codes
+(e.g., `MPI_SUCCESS`), ensuring correct behavior under all execution conditions.
 
 The programs are written with a deep understanding of the MPI execution model,
-respecting its communication semantics and parallel nature.
+respecting its communication semantics and parallel nature. 
 Despite MPI being particularly unforgiving with regard to memory management,
 this implementation avoids common pitfalls through careful allocation,
 deallocation (and a lot of discipline).
 
-The overall design follows the mindset of a parallel execution engineer,
-rather than treating MPI as a simple library layered on top of sequential C code.
+
+**The overall design follows the mindset of a **parallel execution engineer**,
+rather than treating MPI as a simple library layered on top of sequential C code.**
 
 
 

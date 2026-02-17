@@ -192,8 +192,9 @@ In both cases, the global computation can be abstracted as a **parallel reductio
 Rendered form (conceptual):
 
 $$
-R = ℛ(r₀, r₁, …, rₚ₋₁)
+R = \mathcal{R}(r_0, r_1, \dots, r_{P-1})
 $$
+
 where each rₖ is a locally computed result derived solely from Xₖ, and ℛ
 is a deterministic reduction operator.
 

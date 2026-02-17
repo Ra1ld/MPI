@@ -6,8 +6,6 @@ To compile a C program using MPI, execute the following command:
 mpicc <program_path> -o <output_executable>
 ```
 
-<br>
-
 ## Execution
 
 To execute an MPI-compiled C program, two commonly used commands are available:

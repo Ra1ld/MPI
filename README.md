@@ -1,6 +1,3 @@
-
-
-
 # Example MPI Programs
 
 
@@ -57,10 +54,8 @@ a Linux environment ensures the most predictable and consistent behavior.
 
 For installation instructions, please refer to ``MPI_Installation.md``
 
-<br><br><br>
-
-
-
+---
+---
 
 ## Problem Scope 
 

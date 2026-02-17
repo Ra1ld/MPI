@@ -1,3 +1,7 @@
+# How to Run MPI Programs
+
+<br>
+
 ## Compilation
 
 To compile a C program using MPI, execute the following command:

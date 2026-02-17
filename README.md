@@ -29,15 +29,16 @@ preserving runtime efficiency for **all users** as the codebase grows.
 All MPI operations are validated through explicit checking of MPI return codes
 (e.g., `MPI_SUCCESS`), ensuring correct behavior under all execution conditions.
 
+
 The programs are written with a deep understanding of the MPI execution model,
-respecting its communication semantics and parallel nature. 
+respecting its communication semantics and parallel nature.
 Despite MPI being particularly unforgiving with regard to memory management,
 this implementation avoids common pitfalls through careful allocation,
 deallocation (and a lot of discipline).
 
-
-**The overall design follows the mindset of a **parallel execution engineer**,
-rather than treating MPI as a simple library layered on top of sequential C code.**
+> **Design mindset:**  
+> The overall design follows the mindset of a parallel execution engineer,
+> rather than treating MPI as a simple library layered on top of sequential C code.
 
 
 

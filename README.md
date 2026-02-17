@@ -132,7 +132,7 @@ mpiexec -np <number_of_processes> <program_path>
 The scope of this project is the study and implementation of deterministic parallel computations over large discrete input domains, using message-passing paradigms and explicit process coordination
 
 Formally, we consider a finite sequence of natural numbers:
-
+> The sequence length N is user-defined at runtime
 
 $$
 X = \{x_1, x_2, \dots, x_N\}, \quad x_i \in \mathbb{N}

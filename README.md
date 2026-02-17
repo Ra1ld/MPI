@@ -131,19 +131,6 @@ where each \(r_k\) is a locally computed result derived solely from \(X_k\),
 and \(\mathcal{R}\) is a deterministic reduction operator.
 
 
-
-
-
-
-
-
-
-The programs can be compiled and executed locally by following the steps described above.
-They are intended for experimentation and inspection, allowing the user to observe and analyze their behavior under different execution scenarios.
-
-Contributions, improvements, and discussions are welcome.
-If you have suggestions or would like to extend the programs in any way, feel free to contribute.
-
 ## Compilation
 
 To compile a C program using MPI, execute the following command:
@@ -151,6 +138,8 @@ To compile a C program using MPI, execute the following command:
 ```bash
 mpicc <program_path> -o <output_executable>
 ```
+
+<br>
 
 ## Execution
 

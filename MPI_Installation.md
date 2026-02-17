@@ -45,12 +45,16 @@ mpiexec --version
 
 
 
-<br><p align="center">
+<br><br>
+
+<p align="center">
 <strong>✔ Installation verified.</strong><br>
 If the commands above produce output similar to the examples shown, the MPI environment has been successfully installed.
 </p>
 
-```
-It is strongly recommended to validate the installation by compiling and executing a simple MPI program.
-Please refer to the Readme file how_to_run.md.
-```
+---
+
+It is strongly recommended to validate the installation by compiling and executing
+a simple MPI program.
+
+Please refer to ``how_to_run.md`` for compilation and execution instructions.

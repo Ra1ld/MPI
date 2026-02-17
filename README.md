@@ -1,4 +1,5 @@
 
+
 # Example MPI Programs
 
 
@@ -190,8 +191,9 @@ In both cases, the global computation can be abstracted as a **parallel reductio
 
 Rendered form (conceptual):
 
+$$
 R = ℛ(r₀, r₁, …, rₚ₋₁)
-
+$$
 where each rₖ is a locally computed result derived solely from Xₖ, and ℛ
 is a deterministic reduction operator.
 
@@ -202,15 +204,6 @@ is a deterministic reduction operator.
 
 
 
-Mathematically, the overall computation can be expressed as:
-
-\[
-R = \sum_{i=0}^{P-1} f(D_i)
-\]
-
-where \( D_i \) represents the subset of data assigned to process \( i \),
-\( f \) denotes the local computation performed independently by each process,
-and \( P \) is the total number of MPI processes.
 
 
 The programs can be compiled and executed locally by following the steps described above.

@@ -1,29 +1,74 @@
 # MPI Tutorial
 
-## Processes
+## What Is a Process?
 
-A task (the main problem to be solved), both in the real world and in technology,
+A process is an entity created by the CPU in order to execute code.<br>
+For the sake of simplicity, think of a Process as a single CPU Core that will handle the execution of a Code.
+
+<!------------------------------------------------------------------------------------------------------>
+
+## Processes in relation to the "real world"
+Before discussing what a process actually does, let us first establish some
+basic concepts to avoid confusion when reasoning about MPI.
+
+A task (the main problem to be solved), in the real world, 
 can be divided into smaller solvable tasks (subproblems), so that ``multiple
-participants`` can work on those subproblems, each participant being assigned
-one of them.
+participants`` can work on those subproblems. 
 
-In parallel computing, ``those participants`` are called **processes**.
+* In the real world, ``those participants`` would be **humans**.
+* In parallel computing, ``those participants`` are called **processes**.
+
+In the real world, each ``HUMAN`` will be assigned one of those subproblems.<br>
+In Parallel computing, each ``PROCESSS`` will be assigned one of thoose subproblems.
+
+<!------------------------------------------------------------------------------------------------------>
+
+## What's the Goal?
+
+In the context of parallel programming, the ultimate goal is for each process to
+handle a smaller task derived from the original problem, allowing the overall
+problem to be solved faster than if a single CPU core attempted to solve
+everything on its own.
+
+For example:
+
+> A subproblem in parallel computing could be as simple as dividing a basic
+> summation of six numbers across three different processes (typically CPU
+> cores).  
+> Each process would add two numbers, so instead of waiting for a single CPU
+> core to perform all additions sequentially, the additions are distributed
+> across multiple cores, allowing all of them to compute their partial results
+> **simultaneously**.
+
+
+<!------------------------------------------------------------------------------------------------------>
 
 
 
 ## How Are Processes Created?
 
-Processes are created at runtime by the MPI runtime environment and are specified
-by the user through the `mpirun` or `mpiexec` command, by providing the number of
-processes to be created.
+Processes are created at runtime by the ``MPI runtime environment`` after executing
+the `mpirun` or `mpiexec` command. However, the number of processes to be created
+is specified by the user **before** executing the command.
 
-For example:
+This means that the user decides how many processes will be created, while the
+actual creation of those processes takes place only after the command is issued
+and just before the program starts running (i.e., during runtime).
+
+For example, the command below will create 4 processes:
 
 ```bash
 mpiexec -np 4 ./the_program
 ```
-> The above command will create 4 processes
 
+``ΕΔΩ ΓΡΑΦΤΟ ΛΙΓΟ ΚΑΛΥΤΕΡΑ``
+The following Command will create 4 processes starting from 0:
+* Process 0
+* Process 1
+* Process 2 
+* Process 3 
+
+<!------------------------------------------------------------------------------------------------------>
 
 
 

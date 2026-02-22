@@ -61,28 +61,53 @@ For example, the command below will create 4 processes:
 mpiexec -np 4 ./the_program
 ```
 
-``ΕΔΩ ΓΡΑΦΤΟ ΛΙΓΟ ΚΑΛΥΤΕΡΑ``
-The following Command will create 4 processes starting from 0:
-* Process 0
-* Process 1
-* Process 2 
-* Process 3 
+The four processes are created after the user presses ENTER, which means
+their creation happens during runtime.<br>
+However, the number of processes is ``conceptually`` decided earlier, at the moment
+the user writes the command.
 
 <!------------------------------------------------------------------------------------------------------>
 
 
+## What Does a Process Technically Do?
 
-## What a technicaly process does 
-Εach process executes a copy of the original `.c` code.
+Each process executes a copy of the original `.c` code.
 
 This means that **each process executes the entire code** written in the original
 program.
+
 At this point, a natural question arises:
 
 > If each process executes the **entire code**, how can we define parallel
-> computation (as a model) where each process executes only a *part* of the code?
+> computation as a model where each process executes only a *part* of the code,
+> as implied by the goal of parallelism discussed earlier?
 
-This is where **Rank** comes in.
+In order for this to be possible, **all processes participating in the solution
+of a program must first have an identifying number**—in other words, a form of
+*identity* that distinguishes each process from the others.
+
+This allows us, when writing the original `.c` code, to decide **which parts of
+the code will be executed by which process**.
+
+> ⚠️ **Important**  
+> The decision regarding *which process executes which part of the code* is
+> **not** as simple as saying  
+> “the first three lines of code will be executed by process 1, and the rest by
+> process 2”.
+
+
+Instead, the separation is based on a **conceptual partition of the problem**.
+That is, a process (e.g., process 1) is responsible for solving a *specific part
+of the problem*, and in order to do so, it may need to execute **different,
+non-contiguous parts of the code** that are logically associated with that task.
+
+These code segments may be scattered throughout the program, but they are
+*conceptually bound* to the same process through the problem design.
+
+This identifying number (or identity) of a process is called the **rank**.
+
+
+<!------------------------------------------------------------------------------------------------------>
 
 ## Rank
 Οταν κανουμε execute ενα προγραμμα με mpiexec, we specify the number of processes we want the OS/MPI to create. 
@@ -91,11 +116,11 @@ Upon their creation, each process is assigned a Unique ID (UID) more commonly ca
 For example, lets assume the following command: 
 
 
-The following Command will create 4 processes starting from 0:
-* Process 0
-* Process 1
-* Process 2 
-* Process 3 
+Κατα την εκτελεση της εντολης θα δημιουργηθουν 4 διεργασιες, οπου η αριθμηση τους αρχιζει απο το 0
+* Process 0 => 1η διεργασια
+* Process 1 => 2η διεργασια
+* Process 2 => 3η διεργασια
+* Process 3 => 4η διεργφασια
 
 
 

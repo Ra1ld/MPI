@@ -61,10 +61,21 @@ For example, the command below will create 4 processes:
 mpiexec -np 4 ./the_program
 ```
 
-The four processes are created after the user presses ENTER, which means
-their creation happens during runtime.<br>
-However, the number of processes is ``conceptually`` decided earlier, at the moment
-the user writes the command.
+> The four processes are created after the user presses ENTER, which means
+> their creation happens during runtime.<br>
+> However, the number of processes is ``conceptually`` decided earlier, at the moment
+> the user writes the command.
+
+Upon their creation, each process is assigned a Unique ID (UID) more commonly called **Rank**<br>
+During the execution of the command above, 4 processes will be created, and
+their numbering will start from 0:
+* Process 0 → 1st process (rank 0)
+
+* Process 1 → 2nd process (rank 1)
+
+* Process 2 → 3rd process (rank 2)
+
+* Process 3 → 4th process (rank 3)
 
 <!------------------------------------------------------------------------------------------------------>
 
@@ -76,15 +87,27 @@ Each process executes a copy of the original `.c` code.
 This means that **each process executes the entire code** written in the original
 program.
 
+<img width="1536" height="1024" alt="ChatGPT Image Feb 22, 2026, 01_36_42 PM" src="https://github.com/user-attachments/assets/2d9a1713-4952-40c3-8d38-437f735a0e31" />
+
+
 At this point, a natural question arises:
 
 > If each process executes the **entire code**, how can we define parallel
 > computation as a model where each process executes only a *part* of the code,
 > as implied by the goal of parallelism discussed earlier?
 
-In order for this to be possible, **all processes participating in the solution
-of a program must first have an identifying number**—in other words, a form of
-*identity* that distinguishes each process from the others.
+In order for this to be possible, we make use of the **rank (UID)** of each
+process. The rank is accessible inside the program as a special integer value
+and allows us to control execution flow.
+
+By checking the rank value, we can ensure that **specific sections of the code
+are executed only by specific processes**. This is typically achieved by placing
+parts of the code inside conditional statements (`if` statements) that evaluate
+the process rank.
+
+Δηλαδη, ας πουμε οτι ειμαστε η 1η διεργασια μεταξυ 5 διεργασιων σε ενα προγραμμα( το UID μας ειναι 0).
+Αν συναντησουμε ενα if statement που το block code του το εχουμε βαλει να εκτελειται απο την διεργασια 0, τοτε θα το εκτελεσουμε.
+Αλλιως αν ειμαστε οποιαδηποτε αλλη διεργασια (UID διαφορο του 0) τοτε θα το προσπερασουμε
 
 This allows us, when writing the original `.c` code, to decide **which parts of
 the code will be executed by which process**.
@@ -104,7 +127,9 @@ non-contiguous parts of the code** that are logically associated with that task.
 These code segments may be scattered throughout the program, but they are
 *conceptually bound* to the same process through the problem design.
 
-This identifying number (or identity) of a process is called the **rank**.
+> As a result, it is the programmer’s responsibility to decide which process
+> will handle which subproblem, using appropriate conditional statements
+> (e.g., `if` statements).
 
 
 <!------------------------------------------------------------------------------------------------------>
@@ -115,6 +140,9 @@ This identifying number (or identity) of a process is called the **rank**.
 Upon their creation, each process is assigned a Unique ID (UID) more commonly called **Rank**
 For example, lets assume the following command: 
 
+```bash
+mpiexec -np 4 ./the_program
+```
 
 Κατα την εκτελεση της εντολης θα δημιουργηθουν 4 διεργασιες, οπου η αριθμηση τους αρχιζει απο το 0
 * Process 0 => 1η διεργασια
@@ -127,7 +155,5 @@ For example, lets assume the following command:
 
 
 
-> As a result, it is the programmer’s responsibility to decide which process
-> will handle which subproblem, using appropriate conditional statements
-> (e.g., `if` statements).
+
 
